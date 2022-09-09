@@ -1,16 +1,22 @@
-<!DOCTYPE html>
-<html> 
-    <head>
-        <title>Home</title>    <!-- this is website title -->  
-    </head>
-    <body>
-        <h1>Home Page</h1> 
-        <p> Home Page Text</p>
-        {% for post in posts%}                   
-            <h1>{{post.title}}</h1>
-            <p> by {{post.author}} on {{post.date}}</p>
-            <p> {{post.content}}</p>
-        {% endfor%}
+{%extends "layout.html"%}
+{%block content%}
 
-    </body>
-</html>
+    {% for table in df%}
+        {{titles[loop.index]}}
+        {{table|safe}}
+    {% endfor %}
+
+    <img src = {{plot_url}}>
+
+    {% for post in posts%}                   
+        <h1>{{post.title}}</h1>
+        <p> by {{post.author}} on {{post.date}}</p>
+        <p> {{post.postcontent}}</p>
+    {% endfor%}
+    <form method = 'POST' enctype = 'multipart/form-data'>
+        {{form.hidden_tag()}}
+        {{form.file()}}
+        {{form.submit()}}
+    </form>
+
+{%endblock content%}
