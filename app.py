@@ -8,7 +8,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import numpy as np
 from scipy import stats
-from scm_calculator import plot_recoveries, return_df
+from scm_calc import plot_recoveries, return_df
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'supersecretkey'

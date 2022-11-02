@@ -120,7 +120,7 @@ def best_model(df,selected_models):
     print("Activation Energy: {} Kj/mol".format(np.round(Ea,2))) #KJ/mol because we multplied temperature by 1000
 
 
-selected_models = [surface_chem,diffusion]
+selected_models = [surface_chem,diffusion,mixed,film]
 #plot_recoveries(f)
 #plot_linear_kinetic_selected_models(selected_models)
 #best_model(df,selected_models)
