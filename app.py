@@ -8,7 +8,8 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import numpy as np
 from scipy import stats
-from scm_calc import plot_recoveries, return_df
+from scm_calc import plot_recoveries, return_df,best_model,plot_linear_kinetic_selected_models
+from scm_calc import surface_chem,diffusion,mixed,film
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'supersecretkey'
@@ -38,9 +39,29 @@ def home ():
         f = form.file.data
         destination = os.path.join(os.path.abspath(os.path.dirname(__file__)), app.config['UPLOAD_FOLDER'],secure_filename(f.filename))
         f.save(destination)
-        dummy_ = plot_recoveries(destination)
+        recoveries_url = plot_recoveries(destination)
         df = return_df(destination)
-        return render_template('home.html', posts = posts, form = form, plot_url = dummy_,df = [df.to_html(classes = 'data')], titles = df.columns.values)
+        selected_models = [surface_chem,diffusion,mixed,film]
+        model = best_model(df,selected_models)
+        _url = plot_linear_kinetic_selected_models ([model[6]])
+        model_matrix = model[0]
+        best_model_params = {
+            'name' : model[1],
+            'r2' : model[2],
+            'best_model_slope': model[3],
+            'best_model_A': model[4],
+            'best_model_Ea': model[5],
+            'arrhenius_url': model[7]}
+       
+        return render_template('results.html', 
+                               posts = posts, 
+                               form = form, 
+                               recoveries_url = recoveries_url,
+                               df = [df.to_html(classes = 'data')],
+                               model_matrix = [model_matrix.to_html(classes = 'data')],
+                               best_model_params = best_model_params,
+                               _url = _url,
+                               titles = df.columns.values)
     return render_template('home.html', posts = posts, form = form)
 
 @app.route("/about")

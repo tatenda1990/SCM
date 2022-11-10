@@ -1,0 +1,32 @@
+{%extends "layout.html"%}
+{%block content%}
+
+    {% for table in df%}
+        {{table|safe}}
+    {% endfor %}
+
+    <img src = {{recoveries_url}}>
+
+    {% for table in model_matrix%}
+        {{table|safe}}
+    {% endfor %}
+
+    <h1> Best Model Details </h1>
+    <p> Best Model : {{best_model_params.name}},
+        Model r2: {{best_model_params.r2}}
+        Model Slope: {{best_model_params.best_model_slope}}
+    </p>
+
+    <img src={{_url}} alt="">
+
+    <h1> Arrhenius Details </h1>
+    <p> Collision Frequency : {{best_model_params.best_model_A}},
+        Activation Energy: {{best_model_params.best_model_Ea}} kJ/mol,
+        Model Slope: {{best_model_params.best_model_slope}}
+    </p>
+
+    <img src={{best_model_params.arrhenius_url}} alt="">
+
+    
+
+{%endblock content%}
