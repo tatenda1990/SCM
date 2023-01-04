@@ -1,6 +1,11 @@
 {%extends "layout.html"%}
 {%block content%}
 
+<div class="container">
+    <h1 class="mt-4">Results </h1>
+    <p> Results Interpretation    </p>
+</div>
+
     {% for table in df%}
         {{table|safe}}
     {% endfor %}

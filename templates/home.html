@@ -1,6 +1,14 @@
 {%extends "layout.html"%}
 {%block content%}
 
+<div class="container">
+    <h1 class="mt-4">MetCalculator</h1>
+    <p>Upload a .csv excel file with leaching time - recovery data to analyse and identify which mechanism offers the greatest
+        resistance to a leaching operation using the Shrinking Core Model. Currently the only supported models are Diffusion through product layer, 
+        Chemical resistance, and film diffusion. Refer to <a href = "https://github.com/tatenda1990/chemcalc/blob/main/README.md" , target = "_blank"> Github Documentation </a> for more.
+    </p>
+</div>
+
     {% for table in df%}
         {{titles[loop.index]}}
         {{table|safe}}
@@ -8,15 +16,15 @@
 
     <img src = {{plot_url}}>
 
-    {% for post in posts%}                   
-        <h1>{{post.title}}</h1>
-        <p> by {{post.author}} on {{post.date}}</p>
-        <p> {{post.postcontent}}</p>
-    {% endfor%}
     <form method = 'POST' enctype = 'multipart/form-data'>
         {{form.hidden_tag()}}
         {{form.file()}}
         {{form.submit()}}
     </form>
+
+<div class="container">
+    <h4 class="mt-4">MetCalculator</h4>
+    <a href = {{url_for('static', filename = 'files/test.csv')}} download >Download Test.csv here</a>
+</div>
 
 {%endblock content%}

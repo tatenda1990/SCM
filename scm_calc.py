@@ -17,9 +17,10 @@ def plot_recoveries (f):
     df = pd.read_csv(f)
     t = np.array(df[df.columns[0]])
     temps = [temp for temp in df.columns][1:]
-    fig = Figure()
+    fig = plt.figure(figsize = (10,8))
+    #fig = Figure()
     ax = fig.subplots()
-    plt.figure(figsize = (10,8))
+    #plt.figure(figsize = (10,8))
     for i,temp in enumerate(temps):
         ax.plot(t,df[df.columns[i+1]] , label = str(temp))
         ax.set_xlabel(df.columns[0])

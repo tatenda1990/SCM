@@ -1,19 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link rel="stylesheet" href="styles.css">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <title>SCMApp</title>
+
+    <title>Footer</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Playfair+Display:400,700,900" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700" rel="stylesheet">
 </head>
 <body>
 
     <!-- Navigation -->
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top">
     <div class="container">
-      <a class="navbar-brand" href="#">
+      <a class="navbar-brand" href="https://met.azurewebsites.net/">
         <img src="https://placeholder.pics/svg/150x50/888888/EEE/Logo" alt="..." height="36">
       </a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -22,8 +33,10 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav ms-auto">
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">Home</a>
+            <a class="nav-link active" aria-current="page" href="https://met.azurewebsites.net/">Home</a>
           </li>
+
+          <!-- 
           <li class="nav-item">
             <a class="nav-link" href="#">Link</a>
           </li>
@@ -40,22 +53,88 @@
               <li><a class="dropdown-item" href="#">Something else here</a></li>
             </ul>
           </li>
+          -->
         </ul>
       </div>
     </div>
   </nav>
   
   <!-- Page Content -->
-  <div class="container">
-    <h1 class="mt-4">Logo Nav by Start Bootstrap</h1>
-    <p>The logo in the navbar is now a default Bootstrap feature in Bootstrap! Make sure to set the height
-      of the logo within the HTML or using CSS. For best results, use an SVG image as your logo.</p>
-  </div>
   
   <div class = "container"> 
     {%block content%}
     {%endblock content%}
   </div>
+
+  <footer class="container-fluid bg-grey py-5">
+    <div class="container">
+       <div class="row">
+          <div class="col-md-6">
+             <div class="row">
+                <div class="col-md-6 ">
+                   <div class="logo-part">
+                      <img src="" class="w-50 logo-footer" >                                            <!-- include link to logo here in between src tag-->
+                      <p>7Universty of the Witwatersrand, 1 jan Smuts Avenue, JHB</p>
+                      <p>This is an app in the making</p>
+                   </div>
+                </div>
+                <div class="col-md-6 px-4">
+                   <h6> About Me </h6>
+                   <p>I am a self trained aspiring programmer. This is technically my first web app, for analysing leaching data generated from leaching testwork. 
+                     More functions will be added in due course.
+                   </p>
+                   <a href="https://github.com/tatenda1990" class="btn-footer"> Github </a><br>
+                   <a href="https://www.linkedin.com/in/collinssaguru/" class="btn-footer"> LinkedIn</a>
+                </div>
+             </div>
+          </div>
+
+          <!-- 
+          <div class="col-md-6">
+             <div class="row">
+                <div class="col-md-6 px-4">
+                   <h6> Help us</h6>
+                   <div class="row ">
+                      <div class="col-md-6">
+                         <ul>
+                            <li> <a href="#"> Home</a> </li>
+                            <li> <a href="#"> About</a> </li>
+                            <li> <a href="#"> Service</a> </li>
+                            <li> <a href="#"> Team</a> </li>
+                            <li> <a href="#"> Help</a> </li>
+                            <li> <a href="#"> Contact</a> </li>
+                         </ul>
+                      </div>
+                      <div class="col-md-6 px-4">
+                         <ul>
+                            <li> <a href="#"> Cab Faciliy</a> </li>
+                            <li> <a href="#"> Fax</a> </li>
+                            <li> <a href="#"> Terms</a> </li>
+                            <li> <a href="#"> Policy</a> </li>
+                            <li> <a href="#"> Refunds</a> </li>
+                            <li> <a href="#"> Paypal</a> </li>
+                         </ul>
+                      </div>
+                   </div>
+                </div>
+          -->
+                <div class="col-md-6 ">
+                   <h6> Newsletter</h6>
+                   <div class="social">
+                      <a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+                      <a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+                   </div>
+                   <form class="form-footer my-3">
+                      <input type="text"  placeholder="search here...." name="search">
+                      <input type="button" value="Go" >
+                   </form>
+                   <p>Feedback form under development</p>
+                </div>
+             </div>
+          </div>
+       </div>
+    </div>
+    </div>
 
     <!-- Option 1: Bootstrap Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
